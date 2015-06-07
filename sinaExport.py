@@ -80,7 +80,6 @@ def save_to_file(url,filename,blog_address):
         print pic_name
         pic_src = pic[0]
         print "pic src " + pic_src
-        print "pic src2 " + pic_src.group(1)
         if os.path.exists(folder)==False:
             os.makedirs(folder)
         try:
