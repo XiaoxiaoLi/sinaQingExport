@@ -31,7 +31,7 @@ pattern4=u"""(<ul class="posts">.*?)<!--feed描述 start-->"""
 prog4=re.compile(pattern4,re.S)
 #匹配正文图片链接
 
-pattern5=u"""class="qImg media".*?src="(.*?)"|<img src="(.*?)".*?class="qImg media"""
+pattern5=u"""class="qImg media".*?src="([^"]+)"|<img src="([^"]+)".*?class="qImg media"""
 prog5=re.compile(pattern5,re.I)
 
 def read_date_from_url(url):
@@ -77,7 +77,6 @@ def save_to_file(url,filename,blog_address):
     for pic in result:
         folder=blog_address+'/'+filename+'/'
         pic_name='image'+i.__str__()+'.gif' 
-        print pic_name
         pic_src = pic[0]
         print "pic src " + pic_src
         if os.path.exists(folder)==False:
